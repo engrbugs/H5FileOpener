@@ -20,22 +20,22 @@ def print_hi(name):
 
         # Get the data
         data = list(f[a_group_key])
-        datay = f['train_set_y']
-        datay = np.array(datay)
+        classes = f['list_classes']
+        train_set_x = f['train_set_x']
+        train_set_y = f['train_set_y']
+        classes = np.array(classes)
+        train_set_x = np.array(train_set_x)
+        train_set_y = np.array(train_set_y)
 
-        datax = f['train_set_x']
-        datax = np.array(datax)
-
-    index = 25
-
-    print(datay.shape)
-    print(datay[25])
-
-    print(datax.shape)
-    print(datax[25])
-
-    plt.imshow(datax[25])
+    f.close()
+    # Example of a picture
+    index = 1
+    plt.imshow(train_set_x[index])
+    print("y = " + str(train_set_y[index]) + ", it's a '" + classes[np.squeeze(train_set_y[index])].decode(
+        "utf-8") + "' picture.")
     plt.show()
+
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     print_hi('PyCharm')
