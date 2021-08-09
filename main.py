@@ -10,7 +10,7 @@ import h5py
 
 
 def print_hi(name):
-    import h5py
+
     filename = "test_catvnoncat.h5"
 
     with h5py.File(filename, "r") as f:
@@ -24,10 +24,9 @@ def print_hi(name):
         classes = np.array(classes)
         train_set_x = np.array(train_set_x)
         train_set_y = np.array(train_set_y)
-
-    f.close()
+        f.close()
     # Example of a picture
-    index = 1
+    index = 25
     plt.imshow(train_set_x[index])
     print("y = " + str(train_set_y[index]) + ", it's a '" + classes[np.squeeze(train_set_y[index])].decode(
         "utf-8") + "' picture.")
